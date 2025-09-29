@@ -33,8 +33,8 @@ export default {
         elevated: "#fbf7f5",
         negative: "#E62323",
         positive: "#00d255",
-        primary: "#563edc",
-        secondary: "#cb29ef",
+        primary: "#438CFE",
+        secondary: "#C0E0DE",
       },
       keyframes: {
         slider: {

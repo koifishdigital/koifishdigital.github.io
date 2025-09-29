@@ -15,7 +15,7 @@ export const POST: APIRoute = async ({ request }) => {
   });
   const sentFrom = new Sender(
     "sender@hotmail.com",
-    "Spark",
+    "Koi Fish Digital",
   );
   const recipients = [new Recipient(EMAIL, "Ruben Winant")];
   const nameRegex = /^[a-zA-Z\s]+$/;
