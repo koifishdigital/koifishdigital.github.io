@@ -23,4 +23,5 @@ export default defineConfig({
     alpinejs({ entrypoint: "/src/entrypoint" }),
   ],
   prefetch: true,
+  output: "hybrid"
 });

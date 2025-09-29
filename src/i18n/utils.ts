@@ -1,6 +1,6 @@
 import { ui } from "./ui";
 
-export const DEFAULT_LOCALE = "nl";
+export const DEFAULT_LOCALE = "en";
 
 export const LOCALES = {
   en: "en-US",
