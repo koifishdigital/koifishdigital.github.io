@@ -4,12 +4,10 @@ import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
 import alpinejs from "@astrojs/alpinejs";
 import { DEFAULT_LOCALE, LOCALES } from "./src/i18n/utils";
-import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "http://localhost:4321/",
-  // todo - add site for sitemap
+  site: "https://koifish.digital",
   build: {
     format: "directory",
   },
@@ -25,6 +23,4 @@ export default defineConfig({
     alpinejs({ entrypoint: "/src/entrypoint" }),
   ],
   prefetch: true,
-  output: "server",
-  adapter: vercel(),
 });
