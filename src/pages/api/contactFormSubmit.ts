@@ -84,14 +84,14 @@ export const POST: APIRoute = async ({ request }) => {
     .setTo(recipients)
     .setSubject(sanitizedData.topic)
     .setTemplateId("insert template id")
-    .setVariables([
+    .setPersonalization([
       {
         email: EMAIL,
-        substitutions: [
-          { var: "from", value: sanitizedData.name },
-          { var: "fromEmail", value: sanitizedData.email },
-          { var: "message", value: sanitizedData.message },
-        ],
+        data: {
+          from: sanitizedData.name,
+          fromEmail: sanitizedData.email,
+          message: sanitizedData.message,
+        },
       },
     ]);
 
