@@ -1,0 +1,47 @@
+= Cody Nguyen
+
+cody.nguyen94@gmail.com
+Katy, TX 77450
+(281) 646-1955
+
+== EDUCATION
+
+University of Houston Houston, TX
+Bachelor of Science 2018
+Major: Mathematics
+Minor: Chemistry
+
+== EXPERIENCE
+
+=== HCSS Sugarland, TX
+
+==== Software Developer February 2021 -- Present
+
+* Full stack programming for C# desktop application and iOS
+* Ideas Cup Competition June 2021
+* Won the Innovation award for Bid Analytics using Typescript React, Python, and .NET Core
+* Predicted future bids on open Texas DOT contracts to calculate the most optimal bid for highest profitable winning bid using historical data and equipment location
+* Primary developer in the move from a desktop product into the web
+
+==== QA in Automation January 2020 -- February 2021
+
+* Lead software developer during creation of externally facing roadmap site to communicate release information for all products
+* Lead the rewrite of internal release information site from locally hosted php to .NET Core and React hosted on Azure
+* Implemented unit testing into Azure build pipelines
+
+==== QA Intern in Automation July 2019 -- January 2020
+
+* Implemented new displays to automated testing results website written on .NET Core
+* Created web app to initiate automated testing suites on different remote virtual machines using .NET Core and Python
+* Used Docker to run distributed automated tests in parallel to reduce testing time
+
+=== Yokogawa
+R&D Software Developer August 2021 -- October 2022
+* Prototyped python Redfish server container image that will be deployed onto yokogawa’s industrial automation computers
+* Moved the global discovery server proof of concept to production which required a refactoring to SQL database and moving to a stateless server
+
+== TECHNICAL SKILLS
+
+Programming Languages: Python, Go, C#, SQL, Linux
+Certification: AZ-900 Microsoft Azure Fundamentals
+

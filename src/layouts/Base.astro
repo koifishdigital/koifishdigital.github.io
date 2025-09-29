@@ -1,0 +1,23 @@
+---
+import { Header } from "./Header";
+import { Footer } from "./Footer";
+import SimpleAnalytics from "./SimpleAnalytics.astro";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Koi Fish Digital</title>
+	</head>
+	<body class="mx-auto flex min-h-screen max-w-4xl flex-col px-4 pt-4 antialiased sm:px-8">
+        <Header client:load />
+        <main class="text-gray-700 py-4">
+		    <slot />
+        </main>
+        <Footer />
+		<SimpleAnalytics />
+	</body>
+</html>

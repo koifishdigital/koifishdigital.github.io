@@ -1,0 +1,14 @@
+---
+import BaseLayout from '@/layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const works = await getCollection("work");
+---
+
+<BaseLayout>
+    {works.map(p => (
+        <div class=" underline text-xl hover:text-gray-500">
+            <a href={`/work/${p.slug}`}>{p.data.title}</a>
+        </div>
+    ))}
+</BaseLayout>
