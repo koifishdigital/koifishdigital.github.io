@@ -1,0 +1,27 @@
+---
+import DropdownItem from "../components/DropdownItem.astro";
+import Layout from "../layouts/Layout.astro";
+
+export const prerender = true;
+---
+
+<Layout title="Spark" lang="en">
+  <main class="container mx-auto">
+    <section>
+      <h1>FAQ</h1>
+      <p>This is the faq page</p>
+    </section>
+
+    <section class="flex flex-col gap-2">
+      <DropdownItem title="Why did you create this template?" content="I created this template cause i wanted to learn about astro." />
+      <DropdownItem title="Why created this template?" content="This template was made solely by me, Ruben Winant" />
+      <DropdownItem title="What did you use to create this template?" content="I used Astro, Alpine.js, mdx, sitemap, tailwind, vercel and mailersend" />
+      <a
+        data-astro-prefetch
+        href={`/contact`}
+        class="listCard px-6 py-4 font-semibold"
+        >Couldn't find what your're looking for? <span class="fancy">Contact us! </span></a
+      >
+    </section>
+  </main>
+</Layout>

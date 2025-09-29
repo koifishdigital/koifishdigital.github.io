@@ -8,7 +8,6 @@ const blogCollection = defineCollection({
       const [day, month, year] = str.split("/");
       return new Date(`${year}-${month}-${day}`).toLocaleDateString();
     }),
-    lang: z.enum(["en", "nl", "fr"]),
   }),
 });
 

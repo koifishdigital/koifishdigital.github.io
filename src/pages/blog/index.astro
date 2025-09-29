@@ -1,21 +1,17 @@
 ---
 import { getCollection } from "astro:content";
-import Layout from "../../../layouts/Layout.astro";
-import { getLangFromUrl } from "../../../i18n/utils";
+import Layout from "../../layouts/Layout.astro";
 import { calculateReadingTime } from "./utils";
 
-const lang = getLangFromUrl(Astro.url);
-const blogPosts = await getCollection("blog", ({ data }) => {
-  return data.lang === lang;
-});
+const blogPosts = await getCollection("blog");
 ---
 
-<Layout title={`Blog`} lang={lang}>
+<Layout title={`Blog`}>
   <main class="container mx-auto">
     <h1>Blog</h1>
     <ul>
       {
-        blogPosts.map((p) => (
+        blogPosts.map((p: any) => (
           <li>
             <a class="link flex justify-between items-center" href={p.slug}>
               <span>{p.data.title}</span>

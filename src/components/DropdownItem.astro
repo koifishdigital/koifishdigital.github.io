@@ -1,9 +1,5 @@
 ---
-import { getLangFromUrl, useTranslations } from "../i18n/utils";
-
 const { title, content } = Astro.props;
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
 ---
 
 <div
@@ -16,7 +12,7 @@ const t = useTranslations(lang);
     :class="expanded ? 'fancy' : ''"
     @click="expanded = ! expanded"
   >
-    <spa class="text-left">{t(title)}</spa>
+    <spa class="text-left">{title}</spa>
     <i
       class="transition-all h-fit my-auto"
       :class="expanded ? 'rotate-[60deg]' : ''">▼</i
@@ -24,6 +20,6 @@ const t = useTranslations(lang);
   </button>
 
   <div x-show="expanded" x-collapse x-cloak>
-    <p class="px-6 pb-4 m-0">{t(content)}</p>
+    <p class="px-6 pb-4 m-0">{content}</p>
   </div>
 </div>

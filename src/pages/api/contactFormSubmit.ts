@@ -1,7 +1,6 @@
 import type { APIRoute } from "astro";
 import { MailerSend, Sender, Recipient, EmailParams } from "mailersend";
 import { contactOptions } from "../[lang]/contact.astro";
-import { DEFAULT_LOCALE, useTranslations, type UiType } from "../../i18n/utils";
 
 export const POST: APIRoute = async ({ request }) => {
   const formData = await request.formData();
@@ -9,9 +8,6 @@ export const POST: APIRoute = async ({ request }) => {
   const email = formData.get("email");
   const topic = formData.get("topic");
   const message = formData.get("message");
-  const lang = (formData.get("lang") as UiType) ?? (DEFAULT_LOCALE as UiType);
-
-  const t = useTranslations(lang);
 
   const EMAIL: string = "example@hotmail.com";
   const mailerSend = new MailerSend({

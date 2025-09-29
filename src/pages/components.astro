@@ -1,0 +1,184 @@
+---
+import AutoSlider from "../components/AutoSlider.astro";
+import CardGrid from "../components/CardGrid.astro";
+import DropdownItem from "../components/DropdownItem.astro";
+import FullWidthBanner from "../components/FullWidthBanner.astro";
+import IconCard from "../components/IconCard.astro";
+import TextCard from "../components/TextCard.astro";
+import Layout from "../layouts/Layout.astro";
+
+export const prerender = true;
+---
+
+<Layout title="Components">
+  <main class="container mx-auto">
+    <section>
+      <h1>Components</h1>
+      <p>Here you'll find a collection of elements, icons and such that are provided by this theme.</p>
+    </section>
+
+    <section class="flex flex-col gap-2">
+      <h2>Icons</h2>
+      <p>Hover over each icon to see it's name. All icons are svg files within the public/icons directory.</p>
+      <div class="flex flex-wrap gap-2">
+        <i title="Alpine.js"
+          ><img src="/icons/alpinejs.svg" class="w-6 aspect-square" /></i
+        >
+        <i title="globe"
+          ><img src="/icons/globe.svg" class="w-6 aspect-square" /></i
+        >
+        <i title="link"
+          ><img src="/icons/link.svg" class="w-6 aspect-square" /></i
+        >
+        <i title="mailerSend"
+          ><img src="/icons/mailersend.svg" class="w-6 aspect-square" /></i
+        >
+        <i title="mdx"><img src="/icons/mdx.svg" class="w-6 aspect-square" /></i
+        >
+        <i title="pointer"
+          ><img src="/icons/pointer.svg" class="w-6 aspect-square" /></i
+        >
+        <i title="search"
+          ><img src="/icons/search.svg" class="w-6 aspect-square" /></i
+        >
+        <i title="sitemap"
+          ><img src="/icons/sitemap.svg" class="w-6 aspect-square" /></i
+        >
+        <i title="tailwind"
+          ><img src="/icons/tailwind.svg" class="w-6 aspect-square" /></i
+        >
+        <i title="vercel"
+          ><img src="/icons/vercel.svg" class="w-6 aspect-square" /></i
+        >
+        <i title="zero"
+          ><img src="/icons/zero.svg" class="w-6 aspect-square" /></i
+        >
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-2">
+      <h2>Dropdown cards</h2>
+      <p>Powered by alpine.js</p>
+      <DropdownItem title="Sample Card" content="This is a placeholder card to demonstrate the basic structure and functionality of an element. You can customize the content and design to suit your specific needs." />
+    </section>
+
+    <section class="flex flex-col gap-2">
+      <h2>Cards</h2>
+      <p>Some of the premade card components, some of t</p>
+
+      <div>
+        <h3>IconCard</h3>
+        <p>A responsive, interactive list item (&lt;li&gt;) that functions as an icon card with an image and title, using Tailwind CSS for styling.</p>
+        <IconCard
+          href="https://docs.astro.build/en/guides/integrations-guide/alpinejs/"
+          title="Alpine.js"
+          imgHref="/icons/alpinejs.svg"
+          imgAlt="alpine.js integration guide"
+        />
+      </div>
+
+      <div>
+        <h3>.card class</h3>
+        <p>This CSS class .card is designed for a flexible, visually appealing card component with various styles and hover effects.</p>
+        <a href="#" class="card">
+          <div class="flex items-baseline justify-between">
+            <h4>Contact page</h4>
+            <i><img src="/icons/link.svg" class="w-5" /></i>
+          </div>
+          <p>Capture leads and stay connected with a user-friendly contact form, powered by mailersend.</p>
+        </a>
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-2">
+      <AutoSlider
+        title="Auto slider with TextCards"
+        description="A no js, css only auto slider where you can pause the animation by hovering over a card. An optional title and description can also be provided."
+      >
+        <TextCard
+          icon="/icons/zero.svg"
+          title="Zero JavaScript, By Default"
+          description="Astro only ships the JavaScript you need and automatically strips away the rest for a faster website."
+        />
+        <TextCard
+          icon="/icons/pointer.svg"
+          title="Interactive when needed"
+          description="Alpine is a rugged, minimal tool for composing behavior directly in your markup. Think of it like jQuery for the modern web."
+        />
+        <TextCard
+          icon="/icons/globe.svg"
+          title="Multi-language Support"
+          description="Multi-language support straight out of the box using Astro's built-in i18n capabilities, making your content accessible to a wider audience."
+        />
+        <TextCard
+          icon="/icons/tailwind.svg"
+          title="Style with Tailwind CSS"
+          description="Style your website directly in your HTML with utility-first CSS classes, making design a breeze."
+        />
+        <TextCard
+          icon="/icons/search.svg"
+          title="SEO optimized"
+          description="Astro's sitemap integration helps search engines discover your content, improving your site's SEO effortlessly."
+        />
+        <!-- some duplicates needed to make sure row is full -->
+        <TextCard
+          icon="/icons/zero.svg"
+          title="Zero JavaScript, By Default"
+          description="Astro only ships the JavaScript you need and automatically strips away the rest for a faster website."
+        />
+        <TextCard
+          icon="/icons/pointer.svg"
+          title="Interactive when needed"
+          description="Alpine is a rugged, minimal tool for composing behavior directly in your markup. Think of it like jQuery for the modern web."
+        />
+        <TextCard
+          icon="/icons/globe.svg"
+          title="Multi-language Support"
+          description="Multi-language support straight out of the box using Astro's built-in i18n capabilities, making your content accessible to a wider audience."
+        />
+      </AutoSlider>
+    </section>
+
+    <section class="flex flex-col gap-2">
+      <h2>Containers</h2>
+      <p>The CardGrid component allows flexible content layout. Provide content through either the 'upper-row' or 'lower-row' slot, and the component will automatically distribute it into columns.</p>
+      <CardGrid>
+        <a slot="upper-row" href="#" class="card">
+          <div class="flex items-baseline justify-between">
+            <h4>Contact page</h4>
+            <i><img src="/icons/link.svg" class="w-5" /></i>
+          </div>
+          <p>Capture leads and stay connected with a user-friendly contact form, powered by mailersend.</p>
+        </a>
+        <a slot="upper-row" href={`/blog/`} class="card">
+          <div class="flex items-baseline justify-between">
+            <h4>Ready-to-go blog</h4>
+            <i><img src="/icons/link.svg" class="w-5" /></i>
+          </div>
+          <p>Start blogging using the I18N compatible, MDX powered blog!</p>
+        </a>
+        <div slot="lower-row" class="card">
+          <h4>Easy setup</h4>
+          <p class="m-0 mt-1">Get up and running quickly using our premade pages and components.</p>
+        </div>
+        <a slot="lower-row" href={`/faq`} class="card">
+          <div class="flex items-baseline justify-between">
+            <h4>FAQ page</h4>
+            <i><img src="/icons/link.svg" class="w-5" /></i>
+          </div>
+          <p>People might have questions, now you can answer them!</p>
+        </a>
+        <div slot="lower-row" class="card">
+          <h4>Speak Their Language</h4>
+          <p>I18N built in. Convert more!</p>
+        </div>
+      </CardGrid>
+    </section>
+
+    <section>
+      <h2>Full width banner</h2>
+      <p>A full width banner with an optional cta button</p>
+      <FullWidthBanner title="Sample Card" description="This is a placeholder card to demonstrate the basic structure and functionality of an element. You can customize the content and design to suit your specific needs." />
+    </section>
+  </main>
+</Layout>

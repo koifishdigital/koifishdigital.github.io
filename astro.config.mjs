@@ -3,7 +3,6 @@ import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
 import alpinejs from "@astrojs/alpinejs";
-import { DEFAULT_LOCALE, LOCALES } from "./src/i18n/utils";
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,12 +12,7 @@ export default defineConfig({
   },
   integrations: [
     tailwind(),
-    sitemap({
-      i18n: {
-        defaultLocale: DEFAULT_LOCALE,
-        locales: LOCALES,
-      },
-    }),
+    sitemap(),
     mdx(),
     alpinejs({ entrypoint: "/src/entrypoint" }),
   ],

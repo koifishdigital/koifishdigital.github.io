@@ -1,9 +1,4 @@
 ---
-import { getLangFromUrl, useTranslations, type UiType } from "../i18n/utils";
-import LangSwitch from "./LangSwitch.astro";
-
-const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang as UiType);
 ---
 
 <footer class="bg-gray py-4">
@@ -11,7 +6,7 @@ const t = useTranslations(lang as UiType);
     <div class="flex justify-between items-center">
       <a
         data-astro-prefetch
-        href={`/${lang}/`}
+        href="/"
         class="flex gap-1 font-semibold text-white"
         ><img
           src="/favicon.svg"
@@ -19,19 +14,12 @@ const t = useTranslations(lang as UiType);
           width="20"
           height="20"
           loading="eager"
-        />Spark</a
+        />Koi Fish Digital</a
       >
-      <LangSwitch />
     </div>
-    <small class="text-white">
-      &copy; {t("footer.copyright", new Date().getFullYear())}
-      {t("footer.createdBy")}
-      <b
-        ><a href="https://www.rubenwinant.be" target="_blank" class="link"
-          >Ruben Winant</a
-        ></b
-      >
-      {t("footer.createdBy2")}
+    <small class="text-white flex justify-between w-full">
+      <span>&copy; Koi Fish Digital {new Date().getFullYear()}</span>
+      <span>Created By Cody Nguyen</span>
     </small>
   </div>
 </footer>

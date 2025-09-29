@@ -1,1 +1,193 @@
-<meta http-equiv="refresh" content="0;url=/nl/" />
+---
+import IconCard from "../components/IconCard.astro";
+import Layout from "../layouts/Layout.astro";
+import TextCard from "../components/TextCard.astro";
+import AutoSlider from "../components/AutoSlider.astro";
+import FullWidthBanner from "../components/FullWidthBanner.astro";
+import CardGrid from "../components/CardGrid.astro";
+
+export const prerender = true;
+---
+
+<Layout
+  title="Spark"
+  lang="en"
+  description="Launch astro projects with ease and style. Minimalist design, maximum functionality. Whether seasoned or new, Spark streamlines your development for stunning astro websites."
+>
+  <main class="container mx-auto">
+    <section class="flex items-center gap-8">
+      <div>
+        <h1>
+          <span class="fancy">Spark</span>, the best minimal astro starter template!
+        </h1>
+        <p>Launch astro projects with ease and style. Minimalist design, maximum functionality. Whether seasoned or new, Spark streamlines your development for stunning astro websites.</p>
+      </div>
+      <div class="relative hidden md:block">
+        <img src="/favicon.svg" alt="spark logo" width="182" height="242" />
+      </div>
+    </section>
+
+    <CardGrid title="test.cardGridTitle">
+      <a slot="upper-row" href={`/contact/`} class="card">
+        <div class="flex items-baseline justify-between">
+          <h3>Contact page</h3>
+          <i
+            ><img
+              src="/icons/link.svg"
+              alt=""
+              class="w-5"
+              width="20"
+              height="20"
+            /></i
+          >
+        </div>
+        <p>Capture leads and stay connected with a user-friendly contact form, powered by mailersend.</p>
+      </a>
+      <a slot="upper-row" href={`/blog/`} class="card">
+        <div class="flex items-baseline justify-between">
+          <h3>Ready-to-go blog</h3>
+          <i
+            ><img
+              src="/icons/link.svg"
+              alt=""
+              class="w-5"
+              width="20"
+              height="20"
+            /></i
+          >
+        </div>
+        <p>Start blogging using the I18N compatible, MDX powered blog!</p>
+      </a>
+      <a slot="lower-row" href={`/components`} class="card">
+        <div class="flex items-baseline justify-between">
+          <h3>Easy setup</h3>
+          <i
+            ><img
+              src="/icons/link.svg"
+              alt=""
+              class="w-5"
+              width="20"
+              height="20"
+            /></i
+          >
+        </div>
+        <p class="m-0 mt-1">Get up and running quickly using our premade pages and components.</p>
+      </a>
+      <a slot="lower-row" href={`/faq`} class="card">
+        <div class="flex items-baseline justify-between">
+          <h3>FAQ page</h3>
+          <i
+            ><img
+              src="/icons/link.svg"
+              alt=""
+              class="w-5"
+              width="20"
+              height="20"
+            /></i
+          >
+        </div>
+        <p>People might have questions, now you can answer them!</p>
+      </a>
+      <div slot="lower-row" class="card">
+        <h3>Speak Their Language</h3>
+        <p>I18N built in. Convert more!</p>
+      </div>
+    </CardGrid>
+
+    <section>
+      <h2>Integrations</h2>
+      <p>Click on a card below to open the intergation documentation.</p>
+      <ul
+        class="mb-4 grid grid-cols-3 md:grid-cols-4 lg:flex flex-wrap gap-4 py-4 w-full"
+      >
+        <IconCard
+          href="https://docs.astro.build/en/guides/integrations-guide/alpinejs/"
+          title="Alpine.js"
+          imgHref="/icons/alpinejs.svg"
+          imgAlt="alpine.js integration guide"
+        />
+        <IconCard
+          href="https://docs.astro.build/en/guides/integrations-guide/mdx/"
+          title="MDX"
+          imgHref="/icons/mdx.svg"
+          imgAlt="MDX integration guide"
+        />
+        <IconCard
+          href="https://docs.astro.build/en/guides/integrations-guide/sitemap/"
+          title="Sitemap"
+          imgHref="/icons/sitemap.svg"
+          imgAlt="sitemap integration guide"
+        />
+        <IconCard
+          href="https://docs.astro.build/en/guides/integrations-guide/tailwind/"
+          title="Tailwind"
+          imgHref="/icons/tailwind.svg"
+          imgAlt="tailwind integration guide"
+        />
+        <IconCard
+          href="https://docs.astro.build/en/guides/integrations-guide/vercel/"
+          title="Vercel"
+          imgHref="/icons/vercel.svg"
+          imgAlt="vercel integration guide"
+        />
+        <IconCard
+          href="https://github.com/mailersend/mailersend-nodejs?tab=readme-ov-file#send-a-template-based-email"
+          title="MailerSend"
+          imgHref="/icons/mailerSend.svg"
+          imgAlt="mailerSend documentation"
+        />
+      </ul>
+    </section>
+
+    <AutoSlider title="Everything you need to get started">
+      <TextCard
+        icon="/icons/zero.svg"
+        title="Zero JavaScript, By Default"
+        description="Astro only ships the JavaScript you need and automatically strips away the rest for a faster website."
+      />
+      <TextCard
+        icon="/icons/pointer.svg"
+        title="Interactive when needed"
+        description="Alpine is a rugged, minimal tool for composing behavior directly in your markup. Think of it like jQuery for the modern web."
+      />
+      <TextCard
+        icon="/icons/globe.svg"
+        title="Multi-language Support"
+        description="Multi-language support straight out of the box using Astro's built-in i18n capabilities, making your content accessible to a wider audience."
+      />
+      <TextCard
+        icon="/icons/tailwind.svg"
+        title="Style with Tailwind CSS"
+        description="Style your website directly in your HTML with utility-first CSS classes, making design a breeze."
+      />
+      <TextCard
+        icon="/icons/search.svg"
+        title="SEO optimized"
+        description="Astro's sitemap integration helps search engines discover your content, improving your site's SEO effortlessly."
+      />
+      <!-- some duplicates needed to make sure row is full -->
+      <TextCard
+        icon="/icons/zero.svg"
+        title="Zero JavaScript, By Default"
+        description="Astro only ships the JavaScript you need and automatically strips away the rest for a faster website."
+      />
+      <TextCard
+        icon="/icons/pointer.svg"
+        title="Interactive when needed"
+        description="Alpine is a rugged, minimal tool for composing behavior directly in your markup. Think of it like jQuery for the modern web."
+      />
+      <TextCard
+        icon="/icons/globe.svg"
+        title="Multi-language Support"
+        description="Multi-language support straight out of the box using Astro's built-in i18n capabilities, making your content accessible to a wider audience."
+      />
+    </AutoSlider>
+
+    <FullWidthBanner
+      title="Full width banner"
+      description="A full width banner with an optional cta button"
+      ctaTitle="click here"
+      ctaLink="#"
+    />
+  </main>
+</Layout>
