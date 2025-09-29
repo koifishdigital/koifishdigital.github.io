@@ -1,27 +1,33 @@
 {
-    "name": "awesome-ascension",
-    "type": "module",
-    "version": "0.0.1",
-    "scripts": {
-        "dev": "astro dev",
-        "build": "astro check && astro build",
-        "preview": "astro preview",
-        "astro": "astro"
-    },
-    "dependencies": {
-        "@astrojs/check": "^0.9.4",
-        "@astrojs/mdx": "^3.1.9",
-        "@astrojs/solid-js": "^4.4.4",
-        "@astrojs/tailwind": "^5.1.2",
-        "astro": "^4.16.16",
-        "sharp": "^0.33.5",
-        "solid-icons": "^1.1.0",
-        "solid-js": "^1.9.3",
-        "tailwindcss": "^3.4.15",
-        "typescript": "^5.7.2"
-    },
-    "devDependencies": {
-        "prettier": "^3.4.1",
-        "prettier-plugin-astro": "^0.14.1"
-    }
+  "name": "astro-template",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@alpinejs/collapse": "^3.14.0",
+    "@astrojs/alpinejs": "^0.4.0",
+    "@astrojs/check": "^0.9.3",
+    "@astrojs/mdx": "^3.1.6",
+    "@astrojs/sitemap": "^3.1.6",
+    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/vercel": "^7.8.1",
+    "@types/alpinejs": "^3.13.10",
+    "alpinejs": "^3.14.0",
+    "astro": "^4.15.6",
+    "dotenv": "^16.4.5",
+    "mailersend": "^2.2.0",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@types/alpinejs__collapse": "^3.13.4",
+    "prettier": "^3.3.1",
+    "prettier-plugin-astro": "^0.14.0"
+  }
 }
