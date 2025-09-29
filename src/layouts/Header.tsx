@@ -10,7 +10,7 @@ export const Header = () => {
             class="group relative mb-8 flex justify-between items-center"
             id="main-header"
         >
-            <div class="flex sm:flex-col">
+            <div class="w-full flex flex-row justify-between items-center">
                 <a
                     href="/"
                     onclick={() => setMenuOpen(false)}
@@ -20,10 +20,10 @@ export const Header = () => {
                 </a>
                 <nav
                     aria-label="Main menu"
-                    class={`absolute -inset-x-4 top-14 ${menuOpen() ? "flex" : "hidden"} flex-col items-end gap-y-4 rounded-md bg-bgColor/[.85] py-4 text-accent shadow backdrop-blur sm:static sm:z-auto sm:-ms-4 sm:mt-4 sm:flex sm:flex-row sm:items-center sm:rounded-none sm:bg-transparent sm:py-0 sm:shadow-none sm:backdrop-blur-none`}
+                    class={`absolute -inset-x-4 top-14 ${menuOpen() ? "flex" : "hidden"} flex-col items-end gap-y-4 rounded-md bg-bgColor/[.85] py-4 text-accent shadow backdrop-blur sm:static sm:z-auto sm:-ms-4 sm:flex sm:flex-row sm:items-center sm:rounded-none sm:bg-transparent sm:py-0 sm:shadow-none sm:backdrop-blur-none`}
                     id="navigation-menu"
                 >
-                    {MenuLinks.map((link) => (
+                    {MenuLinks.filter((x) => x.label !== "Home").map((link) => (
                         <a
                             class="px-4 py-4 underline-offset-2 sm:py-0 sm:hover:underline"
                             onclick={() => setMenuOpen(false)}
