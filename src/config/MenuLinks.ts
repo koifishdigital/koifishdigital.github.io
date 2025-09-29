@@ -4,7 +4,15 @@ export const MenuLinks = [
         href: "/",
     },
     {
-        label: "Work",
+        label: "Services",
+        href: "/work",
+    },
+    {
+        label: "About Us",
+        href: "/work",
+    },
+    {
+        label: "Contact Us",
         href: "/work",
     },
 ];
