@@ -16,6 +16,5 @@ export default defineConfig({
     mdx(),
     alpinejs({ entrypoint: "/src/entrypoint" }),
   ],
-  prefetch: true,
-  output: "hybrid"
+  prefetch: true
 });

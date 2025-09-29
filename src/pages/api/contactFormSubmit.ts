@@ -1,6 +1,6 @@
 import type { APIRoute } from "astro";
 import { MailerSend, Sender, Recipient, EmailParams } from "mailersend";
-import { contactOptions } from "../[lang]/contact.astro";
+import { contactOptions } from "../contact.astro";
 
 export const POST: APIRoute = async ({ request }) => {
   const formData = await request.formData();
@@ -36,7 +36,7 @@ export const POST: APIRoute = async ({ request }) => {
     name.length < 1 ||
     !nameRegex.test(name)
   ) {
-    errors.name.push(t("contact.error_name"));
+    errors.name.push("Please enter a valid name.");
   }
 
   if (
@@ -45,15 +45,15 @@ export const POST: APIRoute = async ({ request }) => {
     email.length < 1 ||
     !emailRegex.test(email)
   ) {
-    errors.email.push(t("contact.error_email"));
+    errors.email.push("Please enter a valid email address.");
   }
 
   if (!topic || typeof topic !== "string" || !contactOptions.includes(topic)) {
-    errors.topic.push(t("contact.error_topic"));
+    errors.topic.push("Please select a valid topic.");
   }
 
   if (!message || typeof message !== "string" || message.length < 1) {
-    errors.message.push(t("contact.error_message"));
+    errors.message.push("Please enter a valid message.");
   }
 
   if (
@@ -101,13 +101,13 @@ export const POST: APIRoute = async ({ request }) => {
       });
     } else {
       return new Response(
-        JSON.stringify({ message: t("contact.error_general") }),
+        JSON.stringify({ message: "Something went wrong, try again later" }),
         { status: 400 },
       );
     }
   } catch (error) {
     return new Response(
-      JSON.stringify({ message: t("contact.error_general") }),
+      JSON.stringify({ message: "Something went wrong, try again later" }),
       { status: 400 },
     );
   }
